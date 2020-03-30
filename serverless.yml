@@ -24,7 +24,7 @@ provider:
   # under process.env
   environment:
     configTableName: ${self:custom.configTableName}
-    pagConfigTableName: ${self:custom.pageConfigTableName}
+    pageConfigTableName: ${self:custom.pageConfigTableName}
 
   iamRoleStatements:
     - Effect: Allow
