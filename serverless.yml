@@ -50,13 +50,13 @@ functions:
           path: config/{id}
           method: get
           cors: true
-  # listPageConfigs:
-  #   handler: list.main
-  #   events:
-  #     - http:
-  #         path: pages/{id}
-  #         method: get
-  #         cors: true
+  listPageConfigs:
+    handler: list.main
+    events:
+      - http:
+          path: pages/{id}
+          method: get
+          cors: true
 
 # Create our resources with separate CloudFormation templates
 resources:
