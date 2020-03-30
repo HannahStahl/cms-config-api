@@ -4,11 +4,9 @@ import { success, failure } from "./libs/response-lib";
 export async function main(event, context) {
   const params = {
     TableName: process.env.pageConfigTableName,
-    KeyConditionExpression: "id = :id",
     FilterExpression: "userId = :userId",
     ExpressionAttributeValues: {
-      ":id": event.pathParameters.id,
-      ":userId": event.pathParameters.userId
+      ":userId": event.pathParameters.id
     }
   };
 

@@ -54,7 +54,7 @@ functions:
     handler: list.main
     events:
       - http:
-          path: pages/{userId}/{id}
+          path: pages/{id}
           method: get
           cors: true
 
