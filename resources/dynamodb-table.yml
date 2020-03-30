@@ -2,11 +2,22 @@ Resources:
   ConfigTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: ${self:custom.tableName}
+      TableName: ${self:custom.configTableName}
       AttributeDefinitions:
         - AttributeName: userId
           AttributeType: S
       KeySchema:
         - AttributeName: userId
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+  PageConfigTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.pageConfigTableName}
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
           KeyType: HASH
       BillingMode: PAY_PER_REQUEST
