@@ -12,6 +12,7 @@ custom:
   # commands. Or falls back to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
   configTableName: ${self:custom.stage}-cmsConfigs
+  pageConfigTableName: ${self:custom.stage}-cmsPageConfigs
 
 provider:
   name: aws
@@ -23,6 +24,7 @@ provider:
   # under process.env
   environment:
     configTableName: ${self:custom.configTableName}
+    pagConfigTableName: ${self:custom.pageConfigTableName}
 
   iamRoleStatements:
     - Effect: Allow
@@ -38,6 +40,7 @@ provider:
       # the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ ConfigTable, Arn ]
+        - "Fn::GetAtt": [ PageConfigTable, Arn ]
 
 functions:
   getConfig:
@@ -45,6 +48,13 @@ functions:
     events:
       - http:
           path: config/{id}
+          method: get
+          cors: true
+  listPageConfigs:
+    handler: list.main
+    events:
+      - http:
+          path: pages/{userId}/{id}
           method: get
           cors: true
 
