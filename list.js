@@ -11,7 +11,7 @@ export async function main(event, context) {
   };
 
   try {
-    const result = await dynamoDbLib.call("query", params);
+    const result = await dynamoDbLib.call("scan", params);
     const sortedItems = result.Items.sort((a, b) => {
       if (a.itemType < b.itemType) return -1;
       if (b.itemType < a.itemType) return 1;
