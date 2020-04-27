@@ -1,0 +1,11 @@
+{
+  "body": "{\"source\":\"tok_visa\",\"amount\":79.50,\"description\":\"Test charge\"}",
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  },
+  "pathParameters": {
+    "id": "1"
+  }
+}
