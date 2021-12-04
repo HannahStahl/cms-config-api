@@ -20,11 +20,15 @@
     "serverless-offline": "^5.3.3"
   },
   "dependencies": {
+    "ansi-regex": "^6.0.1",
+    "glob-parent": "^6.0.2",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.3",
+    "node-notifier": "^10.0.0",
     "set-value": "^4.1.0",
     "tar": "^6.1.9",
     "trim-newlines": "^4.0.2",
+    "urijs": "^1.19.7",
     "uuid": "^3.3.3",
     "y18n": "^4.0.3"
   }
